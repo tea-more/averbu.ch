@@ -1,31 +1,481 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <!-- On website loaded, make div1 fade in first and then make div 2 fade in -->>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script defer>
-            $(document).ready(function(){
-                $("#div1").fadeIn(1000);
-                $("#div2").fadeIn(2000);
-                $("#div3").fadeIn(4000);
-            });
-        </script>
-        <meta charset="utf-8">
-        <meta http-equiv="refresh" content="4;url=https://www.linkedin.com/in/timorea2/" />
-        <title>averbu.ch</title>
-    </head>
-    <body style="background-color: #000000;">
-        <div id="div1" style="margin-top: 10%; margin-left: auto; margin-right: auto; width: 50%; text-align: center; display: none">
-            
-            <h1 style="font-weight: bold; font-family: Georgia, serif; color: #ffffff; font-size: 50px">Timor Averbuch</h1>
-            <div id="div2" style="display: none">
-                <h1 style="font-weight: lighter; font-family: Georgia, serif; color: #ffffff; font-size: 25px">Website Coming Soon...</h1>
+<html lang="en">
+  <head>
+    <title>Personal Website</title>
+    <meta property="og:title" content="Personal Website" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6 {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Titillium Web;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-scheme-jet);
+        background-color: var(--dl-color-scheme-yellow20);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&amp;display=swap"
+      data-tag="font"
+    />
+    <!--This is the head section-->
+    <!-- <script type="text/javascript"> ... </script> -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./home.css" rel="stylesheet" />
+
+      <div class="home-container">
+        <span class="home-text">averbu.ch</span>
+        <section class="home-hero hero-container section-container">
+          <div class="home-max-width max-width">
+            <h1 id="myname" class="home-title">
+              <span>Timor</span>
+              <br />
+              <span>Averbuch</span>
+              <br />
+            </h1>
+          </div>
+        </section>
+        <div class="home-section section-container"></div>
+        <div class="home-section1 section-container">
+          <div class="home-max-width1 max-width">
+            <div class="home-content">
+              <span class="home-text005 before-Heading">EDUCATION</span>
+              <h1 class="card">University of Illinois at Urbana-Champaign</h1>
+              <div class="home-step">
+                <div class="home-container01">
+                  <span class="home-title1">BS in Computer Science</span>
+                  <span class="home-text007">
+                    <span>
+                      I am currently pursuing a Computer Science degree in the
+                      University of Illinois at Urbana-Champaign.&nbsp; I am an
+                      active member at the&nbsp;
+                    </span>
+                    <span class="home-text009">
+                      Association for Computing Machinery (ACM)
+                    </span>
+                    <span>,</span>
+                    <span class="home-text011">
+                      Illinois Programming League (IPL)
+                    </span>
+                    <span>,</span>
+                    <span class="home-text013">Illinois Swimming Club</span>
+                    <span>, and the</span>
+                    <span class="home-text015">UIUC Climbing Club</span>
+                    <span>.</span>
+                  </span>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="home-max-width2 max-width">
+            <div class="home-content1">
+              <span class="home-text017 before-Heading">Coursework</span>
+              <div class="home-container02 scrolling-wrapper">
+                <div class="home-container03">
+                  <h3 class="home-text018 card">
+                    <span class="home-text019">
+                      Competitive Algorithmic Programming
+                    </span>
+                    <br class="home-text020" />
+                    <span class="home-text021">CS491</span>
+                  </h3>
+                </div>
+                <div class="home-container04">
+                  <h3 class="home-text022 card">
+                    <span class="home-text023">
+                      Applied Parallel Programming
+                    </span>
+                    <br class="home-text024" />
+                    <span class="home-text025">CS483</span>
+                  </h3>
+                </div>
+                <div class="home-container05">
+                  <h3 class="home-text026 card">
+                    <span class="home-text027">
+                      Algorithms &amp;&nbsp;Models of Computation
+                    </span>
+                    <br class="home-text028" />
+                    <span class="home-text029">CS374</span>
+                  </h3>
+                </div>
+                <div class="home-container06">
+                  <h3 class="home-text030 card">
+                    <span>Probability &amp; Statistics for CS</span>
+                    <br class="home-text032" />
+                    <span class="home-text033">CS361</span>
+                  </h3>
+                </div>
+                <div class="home-container07">
+                  <h3 class="home-text034 card">
+                    <span>Numerical Methods I</span>
+                    <br />
+                    <span class="home-text037">CS357</span>
+                  </h3>
+                </div>
+                <div class="home-container08">
+                  <h3 class="home-text038 card">
+                    <span>Computer&nbsp;Architecture</span>
+                    <br />
+                    <span class="home-text041">CS233</span>
+                  </h3>
+                </div>
+                <div class="home-container09">
+                  <h3 class="home-text042 card">
+                    <span>Data Structures</span>
+                    <br class="home-text044" />
+                    <span class="home-text045">CS225</span>
+                    <br />
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <i class="fa-brands fa-linkedin-in"></i>
-    </body>
+        <div class="home-section2 section-container">
+          <div class="home-max-width3 max-width">
+            <div class="home-content2">
+              <span class="home-text047">Experience</span>
+              <h1 class="home-text048">Body Vision Medical</h1>
+              <div class="home-step1">
+                <div class="home-container10">
+                  <span class="home-title2">Software Developer</span>
+                  <ul class="home-ul list">
+                    <li class="list-item">
+                      <span>
+                        <span>Designed and improved</span>
+                        <span class="home-text051">
+                          X-Ray imaging simulations
+                        </span>
+                        <span>for training ML networks</span>
+                      </span>
+                    </li>
+                    <li class="list-item">
+                      <span>
+                        Led and handled investigations of time sensitive issues
+                        from the field
+                      </span>
+                    </li>
+                    <li class="list-item">
+                      <span>
+                        <span>
+                          Worked along a team of experienced software engineers
+                          in
+                        </span>
+                        <span class="home-text056">Agile and Scrum</span>
+                      </span>
+                    </li>
+                    <li class="list-item">
+                      <span>
+                        <span>Installed and supported imaging systems for</span>
+                        <span class="home-text059">10+</span>
+                        <span>hospitals across the US</span>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="home-section3 section-container">
+          <div class="home-max-width4 max-width">
+            <div class="home-content3">
+              <span class="home-text061">Projects</span>
+              <div class="home-content4">
+                <h1 class="home-text062">Virtual Bronchoscopy</h1>
+                <div class="home-step2">
+                  <div class="home-container11">
+                    <ul class="home-ul1 list">
+                      <li class="home-li04 list-item">
+                        <span>
+                          Designed preoperative and intraoperative virtual
+                          bronchoscopy apps to improve navigation in the lungs
+                        </span>
+                      </li>
+                      <li class="home-li05 list-item">
+                        <span>
+                          <span>Dispatched to</span>
+                          <span class="home-text066">
+                            50+ hospitals worldwide
+                          </span>
+                          <span>and have been used in</span>
+                          <span class="home-text068">
+                            500+ medical procedures
+                          </span>
+                        </span>
+                      </li>
+                      <li class="home-li06 list-item">
+                        <span>
+                          Integrated as a part of the FDA approved LungVsion
+                          imaging system using Python and C++ with QT and VTK
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="home-content5">
+                <h1 class="home-text070">
+                  HIPAA Compliant Remote Support Application
+                </h1>
+                <div class="home-step3">
+                  <div class="home-container12">
+                    <ul class="home-ul2 list">
+                      <li class="home-li07 list-item">
+                        <span>
+                          Built a remote support application for technical
+                          support of medical device compliant with HIPAA’s
+                          encryption standard
+                        </span>
+                      </li>
+                      <li class="home-li08 list-item">
+                        <span>
+                          <span>Selected out of</span>
+                          <span class="home-text074">100+ projects</span>
+                          <span>for the UIUC</span>
+                          <span class="home-text076">CS196 Hall of Fame</span>
+                        </span>
+                      </li>
+                      <li class="home-li09 list-item">
+                        <span>
+                          Developed a fast asymmetric video encryption structure
+                          (AES and RSA) using Python with Sockets, QT, and
+                          Crypto
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="home-content6">
+                <h1 class="home-text078">
+                  COVID-19 Spread Management Platform
+                </h1>
+                <div class="home-step4">
+                  <div class="home-container13">
+                    <ul class="home-ul3 list">
+                      <li class="home-li10 list-item">
+                        <span>
+                          <span>
+                            Led 3 person team developing an app for visualizing
+                            and managing
+                          </span>
+                          <span class="home-text081">
+                            COVID-19 infection risk
+                          </span>
+                        </span>
+                      </li>
+                      <li class="home-li11 list-item">
+                        <span>
+                          Programmed infection risk evaluation algorithm using
+                          unsupervised learning and designed a web app using
+                          Django
+                        </span>
+                      </li>
+                      <li class="home-li12 list-item">
+                        <span>
+                          <span>Won</span>
+                          <span class="home-text085">first place</span>
+                          <span>out of</span>
+                          <span class="home-text087">60+</span>
+                          <span>hackathon contestants</span>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="home-section4 section-container">
+          <span class="home-text089 before-Heading">Skills</span>
+          <div class="home-max-width5 max-width">
+            <div class="home-container14">
+              <div class="home-container15">
+                <span class="home-text090 before-Heading">LANGUAGES</span>
+                <span class="home-title3">
+                  <span class="home-text091">Python</span>
+                  <span class="home-text092">|</span>
+                  <span class="home-text093">C++&nbsp;</span>
+                  <span class="home-text094">|</span>
+                  <span class="home-text095">Java&nbsp;</span>
+                  <span class="home-text096">|</span>
+                  <span class="home-text097">C#&nbsp;</span>
+                  <span class="home-text098">|</span>
+                  <span class="home-text099">JavaScript&nbsp;</span>
+                  <span class="home-text100">|</span>
+                  <span class="home-text101">Kotlin</span>
+                  <span class="home-text102">|</span>
+                  <span class="home-text103">HTML/CSS&nbsp;</span>
+                  <span class="home-text104">|</span>
+                  <span class="home-text105">QML&nbsp;</span>
+                  <span class="home-text106">|</span>
+                  <span class="home-text107">TASM (</span>
+                  <span>x86</span>
+                  <span class="home-text109">)</span>
+                  <span class="home-text110">|</span>
+                  <span class="home-text111">MIPS</span>
+                </span>
+              </div>
+              <div class="home-container16">
+                <span class="home-text112 before-Heading">
+                  Skills&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                </span>
+                <span class="home-title4">
+                  <span>Cuda&nbsp;</span>
+                  <span class="home-text114">|</span>
+                  <span class="home-text115"></span>
+                  <span>QT</span>
+                  <span class="home-text117">&nbsp;</span>
+                  <span class="home-text118">|</span>
+                  <span class="home-text119"></span>
+                  <span>VTK&nbsp;</span>
+                  <span class="home-text121">|</span>
+                  <span class="home-text122"></span>
+                  <span>OpenGL</span>
+                  <span class="home-text124">&nbsp;</span>
+                  <span class="home-text125">|</span>
+                  <span class="home-text126"></span>
+                  <span>Django&nbsp;</span>
+                  <span class="home-text128">|</span>
+                  <span class="home-text129"></span>
+                  <span>Sockets&nbsp;</span>
+                  <span class="home-text131">|</span>
+                  <span class="home-text132"></span>
+                  <span>Crypto</span>
+                </span>
+              </div>
+              <div class="home-container17">
+                <span class="home-text134">
+                  <span class="before-Heading">
+                    TOOLS&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                  </span>
+                  <br />
+                </span>
+                <span class="home-title5">
+                  <span>Git&nbsp;</span>
+                  <span class="home-text138">|</span>
+                  <span class="home-text139"></span>
+                  <span>Asure&nbsp;</span>
+                  <span class="home-text141">|</span>
+                  <span class="home-text142"></span>
+                  <span>AWS&nbsp;</span>
+                  <span class="home-text144">|</span>
+                  <span class="home-text145"></span>
+                  <span>LATEX</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="home-social-bar">
+          <a
+            href="https://www.linkedin.com/in/timorea2/"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="home-link"
+          >
+            <svg viewBox="0 0 877.7142857142857 1024" class="home-icon">
+              <path
+                d="M135.429 808h132v-396.571h-132v396.571zM276 289.143c-0.571-38.857-28.571-68.571-73.714-68.571s-74.857 29.714-74.857 68.571c0 37.714 28.571 68.571 73.143 68.571h0.571c46.286 0 74.857-30.857 74.857-68.571zM610.286 808h132v-227.429c0-121.714-65.143-178.286-152-178.286-70.857 0-102.286 39.429-119.429 66.857h1.143v-57.714h-132s1.714 37.143 0 396.571v0h132v-221.714c0-11.429 0.571-23.429 4-32 9.714-23.429 31.429-48 68-48 47.429 0 66.286 36 66.286 89.714v212zM877.714 237.714v548.571c0 90.857-73.714 164.571-164.571 164.571h-548.571c-90.857 0-164.571-73.714-164.571-164.571v-548.571c0-90.857 73.714-164.571 164.571-164.571h548.571c90.857 0 164.571 73.714 164.571 164.571z"
+              ></path>
+            </svg>
+          </a>
+          <a
+            href="https://github.com/tea-more"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="home-link1"
+          >
+            <svg viewBox="0 0 877.7142857142857 1024" class="home-icon2">
+              <path
+                d="M296.571 685.714v0c1.143-1.714 0.571-5.143-1.714-7.429-2.857-2.286-6.286-2.857-8-1.143-1.143 1.714-0.571 5.143 1.714 7.429 2.857 2.286 6.286 2.857 8 1.143zM280.571 662.286c-1.714-2.286-4.571-3.429-6.857-2.286-1.714 1.143-1.714 4.571 0 6.857 2.286 2.857 5.143 4 6.857 2.857v0c1.714-1.143 1.714-4.571 0-7.429zM257.143 639.429v0c0.571-1.143-0.571-3.429-2.857-4.571-1.714-0.571-4-0.571-4.571 1.143-1.143 1.714 0 3.429 2.286 4.571 2.286 0.571 4.571 0.571 5.143-1.143zM269.143 652.571v0c1.143-1.143 1.143-4-1.143-5.714-1.714-2.286-4.571-2.857-5.714-1.714-1.714 1.714-1.143 4 0.571 6.286 1.714 1.714 4.571 2.857 6.286 1.143zM318.286 695.429v0c0.571-2.286-1.714-5.143-5.143-6.286s-6.286 0-7.429 2.286c-0.571 2.286 1.714 5.143 5.143 6.286s6.286 0 7.429-2.286zM342.286 697.143v0c0-2.286-2.857-4.571-6.857-4.571-3.429 0-5.714 2.286-5.714 4.571s2.857 4.571 6.286 4.571 6.286-2.286 6.286-4.571zM364.571 693.143v0c-0.571-2.286-4-3.429-7.429-2.857s-5.714 2.857-5.143 5.143 3.429 4 6.857 3.429 5.714-3.429 5.714-5.714zM731.429 512c0-161.714-130.857-292.571-292.571-292.571s-292.571 130.857-292.571 292.571c0 129.143 84 238.857 200 277.714 14.857 2.857 20-6.286 20-14.286 0-6.857 0-29.714-0.571-54.286 0 0-81.143 17.714-98.286-34.857 0 0-13.143-33.714-32.571-42.286 0 0-26.286-18.286 2.286-18.286 0 0 28.571 2.286 44.571 30.286 25.714 45.143 68.571 32 85.143 24.571 2.857-18.857 10.286-32 18.857-39.429-65.143-7.429-133.714-32.571-133.714-144.571 0-32 11.429-57.714 30.286-78.286-2.857-7.429-13.143-37.143 2.857-77.714 24.571-7.429 80.571 30.286 80.571 30.286 23.429-6.857 48-9.714 73.143-9.714s49.714 2.857 73.143 9.714c0 0 56-37.714 80.571-30.286 16 40.571 5.714 70.286 2.857 77.714 18.857 20.571 30.286 46.286 30.286 78.286 0 112.571-68.571 137.143-133.714 144.571 10.286 9.143 20 26.857 20 54.286 0 38.857-0.571 70.286-0.571 80 0 8 5.143 17.143 20 14.286 116-38.857 200-148.571 200-277.714zM877.714 237.714v548.571c0 90.857-73.714 164.571-164.571 164.571h-548.571c-90.857 0-164.571-73.714-164.571-164.571v-548.571c0-90.857 73.714-164.571 164.571-164.571h548.571c90.857 0 164.571 73.714 164.571 164.571z"
+              ></path>
+            </svg>
+          </a>
+          <a href="tel:+16503130413" class="home-link2">
+            <svg viewBox="0 0 877.7142857142857 1024" class="home-icon4">
+              <path
+                d="M731.429 681.714c0-2.857 0-6.286-1.143-9.143-3.429-10.286-86.857-52.571-102.857-61.714-10.857-6.286-24-18.857-37.143-18.857-25.143 0-62.286 74.857-84.571 74.857-11.429 0-25.714-10.286-36-16-75.429-42.286-127.429-94.286-169.714-169.714-5.714-10.286-16-24.571-16-36 0-22.286 74.857-59.429 74.857-84.571 0-13.143-12.571-26.286-18.857-37.143-9.143-16-51.429-99.429-61.714-102.857-2.857-1.143-6.286-1.143-9.143-1.143-14.857 0-44 6.857-57.714 12.571-37.714 17.143-65.143 89.143-65.143 128.571 0 38.286 15.429 73.143 28.571 108.571 45.714 125.143 181.714 261.143 306.857 306.857 35.429 13.143 70.286 28.571 108.571 28.571 39.429 0 111.429-27.429 128.571-65.143 5.714-13.714 12.571-42.857 12.571-57.714zM877.714 237.714v548.571c0 90.857-73.714 164.571-164.571 164.571h-548.571c-90.857 0-164.571-73.714-164.571-164.571v-548.571c0-90.857 73.714-164.571 164.571-164.571h548.571c90.857 0 164.571 73.714 164.571 164.571z"
+              ></path>
+            </svg>
+          </a>
+          <a
+            href="mailto:timorearan.averbuch@gmail.com?subject="
+            class="home-link3"
+          >
+            <svg viewBox="0 0 1024 1024" class="home-icon6">
+              <path
+                d="M853.31 0h-682.62c-93.88 0-170.69 76.784-170.69 170.658v682.656c0 93.876 76.81 170.686 170.69 170.686h682.622c93.938 0 170.688-76.81 170.688-170.686v-682.656c0-93.874-76.75-170.658-170.69-170.658zM256 256h512c9.138 0 18.004 1.962 26.144 5.662l-282.144 329.168-282.144-329.17c8.14-3.696 17.006-5.66 26.144-5.66zM192 704v-384c0-1.34 0.056-2.672 0.14-4l187.664 218.94-185.598 185.6c-1.444-5.338-2.206-10.886-2.206-16.54zM768 768h-512c-5.654 0-11.202-0.762-16.54-2.206l182.118-182.118 90.422 105.496 90.424-105.494 182.116 182.118c-5.34 1.442-10.886 2.204-16.54 2.204zM832 704c0 5.654-0.762 11.2-2.206 16.54l-185.598-185.598 187.664-218.942c0.084 1.328 0.14 2.66 0.14 4v384z"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.onload = () => {
+        const runAllScripts = () => {
+          initializeAllAccordions()
+        }
+
+        const listenForUrlChanges = () => {
+          let url = location.href
+          document.body.addEventListener(
+            'click',
+            () => {
+              requestAnimationFrame(() => {
+                if (url !== location.href) {
+                  runAllScripts()
+                  url = location.href
+                }
+              })
+            },
+            true
+          )
+        }
+
+        const initializeAllAccordions = () => {
+          const allAccordions = document.querySelectorAll('[data-role="Accordion"]');
+
+          allAccordions.forEach((accordion) => {
+            const accordionHeader = accordion.querySelector('[data-type="accordion-header"]')
+            const accordionContent = accordion.querySelector('[data-type="accordion-content"]')
+
+            accordionHeader.addEventListener('click', () => {
+              if (accordionContent.style.maxHeight) {
+                accordionContent.style.maxHeight = ''
+              } else {
+                accordionContent.style.maxHeight = `${accordionContent.scrollHeight}px`
+              }
+            })
+          })
+        }
+
+        listenForUrlChanges()
+        runAllScripts()
+      }
+    </script>
+  </body>
 </html>
