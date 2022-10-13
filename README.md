@@ -1,0 +1,3 @@
+# averbu.ch
+
+Source code for my personal website. It is a static website developed with ![HTML](https://img.shields.io/badge/HTML-E34F26.svg?style=flat&logo=html5&logoColor=white) and ![CSS](https://img.shields.io/badge/CSS-1572B6.svg?style=flat&logo=css3&logoColor=white). It is hosted on ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-181717.svg?style=flat&logo=github&logoColor=white) under the url [averbu.ch](https://averbu.ch).
