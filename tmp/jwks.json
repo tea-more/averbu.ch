@@ -1,10 +1,12 @@
 {
     "keys": [
         {
+            "alg": "RS256",
             "e": "AQAB",
             "kid": "8nzF3kcfIcfuSVypbn7RZQUKadShEFBF-Wt6QNs8HyI",
             "kty": "RSA",
-            "n": "5DWUKLPu2m_i29qOnU66a2GuOhF7ZAfX0q4KILW2KlenSA8KLVbUJLGES9vSA6E-ds5jZu0Wy0Fq8RmrZ8QSMplLCdA7NR-KDayIrIj0ipezCncrxbSzyHyZNL831kfzkBwq55WWF2dKTL_cdKho_FSwByesmdIf5gfLlyCWD9j5PPOZvBKIjcm6lwKI9K46oeqNLtmhikK5qoZwQ0uSLsUZecYrQMdcrWBabXCXhs6bmI88uU2-cNJLa5obLipoHnsv8K7CuPtfJjVF6uBaOqjJWt834bTlS1JOurPBUXBTzQAbYmC5AEuzlySvb1Zes27qj1H3VEcpUpcBMPA0Yw"
+            "n": "5DWUKLPu2m_i29qOnU66a2GuOhF7ZAfX0q4KILW2KlenSA8KLVbUJLGES9vSA6E-ds5jZu0Wy0Fq8RmrZ8QSMplLCdA7NR-KDayIrIj0ipezCncrxbSzyHyZNL831kfzkBwq55WWF2dKTL_cdKho_FSwByesmdIf5gfLlyCWD9j5PPOZvBKIjcm6lwKI9K46oeqNLtmhikK5qoZwQ0uSLsUZecYrQMdcrWBabXCXhs6bmI88uU2-cNJLa5obLipoHnsv8K7CuPtfJjVF6uBaOqjJWt834bTlS1JOurPBUXBTzQAbYmC5AEuzlySvb1Zes27qj1H3VEcpUpcBMPA0Yw",
+            "use": "sig"
         }
     ]
 }
