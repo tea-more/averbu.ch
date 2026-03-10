@@ -61,11 +61,11 @@ export default function Card() {
           {/* Subtle gradient overlay */}
           <div className="gradient-overlay" />
 
-          {/* Centered text content */}
-          <div className="card-content-center">
-            <div className="text-center">
-              <p className="font-mono text-[14px] font-bold text-[#5c4a3d] uppercase tracking-[0.12em] mb-2">TIMOR AVERBUCH</p>
-              <p className="font-mono text-[11px] font-bold text-[#5c4a3d] uppercase tracking-[0.08em]">SCALING INTELLIGENCE</p>
+          {/* Bottom left text content */}
+          <div className="card-content-bottom-left">
+            <div>
+              <p className="font-mono text-[14px] font-bold text-[#5c4a3d] uppercase tracking-[0.12em] mb-1">TIMOR AVERBUCH</p>
+              <p className="font-mono text-[11px] text-[#5c4a3d]/70 uppercase tracking-[0.08em]">SCALING intelligence</p>
             </div>
           </div>
         </div>
@@ -103,7 +103,7 @@ export default function Card() {
                 X
               </a>
               <a 
-                href="mailto:timoerean.averbuch@gmail.com" 
+                href="mailto:timoreran.averbuch@gmail.com" 
                 onClick={(e) => e.stopPropagation()}
                 className="font-mono text-[11px] tracking-[0.08em] text-[#5c4a3d]/70 hover:text-[#5c4a3d] transition-colors dotted-underline uppercase"
               >

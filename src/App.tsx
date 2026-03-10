@@ -4,14 +4,14 @@ import './App.css'
 
 function App() {
   return (
-    <div className="min-h-screen w-full bg-[#f5f0e6] flex flex-col items-center justify-center relative">
+    <div className="min-h-screen w-full bg-black flex flex-col items-center justify-center relative">
       {/* Main card */}
       <div className="flex items-center justify-center">
         <Card />
       </div>
 
-      {/* Navigation dots at bottom */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+      {/* Navigation dots at bottom - hidden for now */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden">
         <NavigationDots />
       </div>
     </div>
