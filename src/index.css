@@ -150,6 +150,10 @@
   z-index: 2;
 }
 
+.flipper.flipped .front {
+  pointer-events: none;
+}
+
 .back {
   transform: rotateY(180deg);
 }

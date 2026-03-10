@@ -65,7 +65,7 @@ export default function Card() {
           <div className="card-content-bottom-left">
             <div>
               <p className="font-mono text-[14px] font-bold text-[#5c4a3d] uppercase tracking-[0.12em] mb-1">TIMOR AVERBUCH</p>
-              <p className="font-mono text-[11px] text-[#5c4a3d]/70 uppercase tracking-[0.08em]">SCALING intelligence</p>
+              <p className="font-mono text-[11px] text-[#5c4a3d]/70 uppercase tracking-[0.08em]">SCALING INTELLIGENCE</p>
             </div>
           </div>
         </div>
