@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Card from './components/Card'
 import './App.css'
@@ -11,6 +11,16 @@ const posts = [
 
 function App() {
   const [view, setView] = useState<'card' | 'work'>('card')
+
+  const handleWheel = useCallback((e: WheelEvent) => {
+    if (e.deltaY > 0 && view === 'card') setView('work')
+    else if (e.deltaY < 0 && view === 'work') setView('card')
+  }, [view])
+
+  useEffect(() => {
+    window.addEventListener('wheel', handleWheel, { passive: true })
+    return () => window.removeEventListener('wheel', handleWheel)
+  }, [handleWheel])
 
   return (
     <div className="min-h-screen w-full bg-black overflow-hidden relative">
