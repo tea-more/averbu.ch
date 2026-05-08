@@ -1,37 +1,46 @@
-import { useState, useRef } from 'react'
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
+import { useState, useRef, useEffect } from 'react'
+import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'framer-motion'
 
-export default function Card() {
+interface Props {
+  expanded?: boolean
+  onCollapse?: () => void
+}
+
+export default function Card({ expanded = false, onCollapse }: Props) {
   const [isFlipped, setIsFlipped] = useState(false)
+  const [isNarrow, setIsNarrow] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
-  
-  // Mouse position for 3D tilt
+
+  useEffect(() => {
+    const mql = window.matchMedia('(max-width: 640px)')
+    const update = () => setIsNarrow(mql.matches)
+    update()
+    mql.addEventListener('change', update)
+    return () => mql.removeEventListener('change', update)
+  }, [])
+
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
-  
-  // Spring config for smooth animation
   const springConfig = { stiffness: 150, damping: 15 }
-  
-  // Map mouse position to rotation
   const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [15, -15]), springConfig)
   const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-15, 15]), springConfig)
 
-  const handleFlip = () => {
-    setIsFlipped(!isFlipped)
+  useEffect(() => {
+    if (expanded) setIsFlipped(false)
+  }, [expanded])
+
+  const handleClick = () => {
+    if (expanded) onCollapse?.()
+    else setIsFlipped(!isFlipped)
   }
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (!containerRef.current || isFlipped) return
-    
+    if (!containerRef.current || isFlipped || expanded) return
     const rect = containerRef.current.getBoundingClientRect()
     const centerX = rect.left + rect.width / 2
     const centerY = rect.top + rect.height / 2
-    
-    const normalizedX = (e.clientX - centerX) / rect.width
-    const normalizedY = (e.clientY - centerY) / rect.height
-    
-    mouseX.set(normalizedX)
-    mouseY.set(normalizedY)
+    mouseX.set((e.clientX - centerX) / rect.width)
+    mouseY.set((e.clientY - centerY) / rect.height)
   }
 
   const handleMouseLeave = () => {
@@ -39,76 +48,74 @@ export default function Card() {
     mouseY.set(0)
   }
 
+  const stop = (e: React.MouseEvent) => e.stopPropagation()
+  const linkClass = "font-mono text-[11px] tracking-[0.08em] text-[#5c4a3d]/70 hover:text-[#5c4a3d] transition-colors dotted-underline uppercase"
+
+  const cardTransition = { duration: 0.7, ease: [0.4, 0, 0.2, 1], delay: expanded ? 0 : 0.4 }
+
   return (
-    <motion.div 
-      className="flip-container"
+    <motion.div
       ref={containerRef}
-      onClick={handleFlip}
+      onClick={handleClick}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
+      initial={false}
+      animate={
+        expanded
+          ? { width: 'calc(100vw - 32px)', height: isNarrow ? 140 : 96, top: 16, left: 16, x: 0, y: 0 }
+          : { width: 380, height: 280, top: '50%', left: '50%', x: '-50%', y: '-50%' }
+      }
+      transition={cardTransition}
+      className="fixed cursor-pointer select-none"
       style={{
-        rotateX: isFlipped ? 0 : rotateX,
-        rotateY: isFlipped ? 0 : rotateY,
+        rotateX: isFlipped || expanded ? 0 : rotateX,
+        rotateY: isFlipped || expanded ? 0 : rotateY,
         transformPerspective: 1000,
+        transformStyle: 'preserve-3d',
       }}
     >
-      <div className={`flipper ${isFlipped ? 'flipped' : ''}`}>
-        {/* Front side */}
+      <div className={`flipper ${isFlipped && !expanded ? 'flipped' : ''}`}>
         <div className="front paper-card">
-          {/* Paper texture overlay */}
           <div className="paper-texture" />
-
-          {/* Subtle gradient overlay */}
           <div className="gradient-overlay" />
 
-          {/* Bottom left text content */}
-          <div className="card-content-bottom-left">
-            <div>
-              <p className="font-mono text-[14px] font-bold text-[#5c4a3d] uppercase tracking-[0.12em] mb-1">TIMOR AVERBUCH</p>
-              <p className="font-mono text-[11px] text-[#5c4a3d]/70 uppercase tracking-[0.08em]">SCALING INTELLIGENCE</p>
-            </div>
-          </div>
+          <motion.div
+            className="absolute"
+            initial={false}
+            animate={expanded ? { top: 28, left: 32 } : { top: 220, left: 20 }}
+            transition={cardTransition}
+          >
+            <p className="font-mono text-[14px] font-bold text-[#5c4a3d] uppercase tracking-[0.12em] mb-1">TIMOR AVERBUCH</p>
+            <p className="font-mono text-[11px] text-[#5c4a3d]/70 uppercase tracking-[0.08em]">SCALING intelligence</p>
+          </motion.div>
+
+          <AnimatePresence>
+            {expanded && (
+              <motion.div
+                key="socials"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, transition: { delay: 0.5, duration: 0.4 } }}
+                exit={{ opacity: 0, transition: { duration: 0.2 } }}
+                className="absolute flex flex-wrap gap-x-5 gap-y-2 left-8 bottom-5 sm:left-auto sm:bottom-auto sm:right-8 sm:top-1/2 sm:-translate-y-1/2"
+              >
+                <a href="https://www.linkedin.com/in/timorea2/" target="_blank" rel="noreferrer" onClick={stop} className={linkClass}>LINKEDIN</a>
+                <a href="https://github.com/tea-more" target="_blank" rel="noreferrer" onClick={stop} className={linkClass}>GITHUB</a>
+                <a href="https://x.com/timorchik" target="_blank" rel="noreferrer" onClick={stop} className={linkClass}>X</a>
+                <a href="mailto:timoreran.averbuch@gmail.com" onClick={stop} className={linkClass}>EMAIL</a>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
-        {/* Back side */}
         <div className="back paper-card">
-          {/* Paper texture overlay */}
           <div className="paper-texture" />
-          
-          {/* Subtle gradient overlay */}
           <div className="gradient-overlay-back" />
-          
-          {/* Back content */}
           <div className="card-content-center">
             <div className="flex gap-6">
-              <a 
-                href="https://www.linkedin.com/in/timorea2/" 
-                onClick={(e) => e.stopPropagation()}
-                className="font-mono text-[11px] tracking-[0.08em] text-[#5c4a3d]/70 hover:text-[#5c4a3d] transition-colors dotted-underline uppercase"
-              >
-                LINKEDIN
-              </a>
-              <a 
-                href="https://github.com/tea-more" 
-                onClick={(e) => e.stopPropagation()}
-                className="font-mono text-[11px] tracking-[0.08em] text-[#5c4a3d]/70 hover:text-[#5c4a3d] transition-colors dotted-underline uppercase"
-              >
-                GITHUB
-              </a>
-              <a 
-                href="https://x.com/timorchik" 
-                onClick={(e) => e.stopPropagation()}
-                className="font-mono text-[11px] tracking-[0.08em] text-[#5c4a3d]/70 hover:text-[#5c4a3d] transition-colors dotted-underline uppercase"
-              >
-                X
-              </a>
-              <a 
-                href="mailto:timoreran.averbuch@gmail.com" 
-                onClick={(e) => e.stopPropagation()}
-                className="font-mono text-[11px] tracking-[0.08em] text-[#5c4a3d]/70 hover:text-[#5c4a3d] transition-colors dotted-underline uppercase"
-              >
-                EMAIL
-              </a>
+              <a href="https://www.linkedin.com/in/timorea2/" target="_blank" rel="noreferrer" onClick={stop} className={linkClass}>LINKEDIN</a>
+              <a href="https://github.com/tea-more" target="_blank" rel="noreferrer" onClick={stop} className={linkClass}>GITHUB</a>
+              <a href="https://x.com/timorchik" target="_blank" rel="noreferrer" onClick={stop} className={linkClass}>X</a>
+              <a href="mailto:timoreran.averbuch@gmail.com" onClick={stop} className={linkClass}>EMAIL</a>
             </div>
           </div>
         </div>
