@@ -51,7 +51,7 @@ export default function Card({ expanded = false, onCollapse }: Props) {
   const stop = (e: React.MouseEvent) => e.stopPropagation()
   const linkClass = "font-mono text-[11px] tracking-[0.08em] text-[#5c4a3d]/70 hover:text-[#5c4a3d] transition-colors dotted-underline uppercase"
 
-  const cardTransition = { duration: 0.7, ease: [0.4, 0, 0.2, 1], delay: expanded ? 0 : 0.4 }
+  const cardTransition = { duration: 0.7, ease: [0.4, 0, 0.2, 1] as [number, number, number, number], delay: expanded ? 0 : 0.4 }
 
   return (
     <motion.div
