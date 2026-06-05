@@ -4,8 +4,10 @@ import Card from './components/Card'
 import './App.css'
 
 const posts = [
+  { date: '06.02.2026', title: 'Wall Attention: Length Generalization With Diagonal Gates', url: 'https://blog.tilderesearch.com/blog/wall-attn' },
   { date: '04.28.2026', title: 'Nitrobrew: Fast, Lossless Distillation for Free', url: 'https://blog.tilderesearch.com/blog/nitrobrew' },
   { date: '07.25.2025', title: 'MoMoE: Memory-optimized Mixture of Experts', url: 'https://blog.tilderesearch.com/blog/momoe' },
+  { date: '06.25.2025', title: 'Sparsity is Cool', url: 'https://blog.tilderesearch.com/blog/sparse-attn' },
   { date: '06.25.2025', title: 'Sparsity is Cool', url: 'https://blog.tilderesearch.com/blog/sparse-attn' },
 ]
 
